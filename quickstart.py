@@ -1,6 +1,6 @@
 # imports
-from instapy import InstaPy
-from instapy import smart_run
+import instapy.InstaPy as aa
+import instapy.smart_run as bb
 
 # login credentials
 insta_username = ''
@@ -19,11 +19,11 @@ comments = ['Nice shot! @{}',
 
 # get an InstaPy session!
 # set headless_browser=True to run InstaPy in the background
-session = InstaPy(username=insta_username,
+session = aa(username=insta_username,
                   password=insta_password,
                   headless_browser=False)
 
-with smart_run(session):
+with bb(session):
   """ Activity flow """		
   # general settings		
   session.set_dont_include(["friend1", "friend2", "friend3"])		
